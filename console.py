@@ -28,8 +28,6 @@ class HBNBCommand(cmd.Cmd):
         """Quit command to exit the interpreter"""
         return True
 
-    do_EOF = do_quit
-
     def do_create(self, arg):
         """Creates a new instance of BaseModel"""
         args = shlex.split(arg)
