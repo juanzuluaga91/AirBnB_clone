@@ -11,6 +11,7 @@ from models import storage
 
 class_type = {"BaseModel": BaseModel}
 
+
 class HBNBCommand(cmd.Cmd):
     """Class Console """
     prompt = "(hbnb) "
@@ -102,6 +103,7 @@ class HBNBCommand(cmd.Cmd):
             print("]")
         else:
             print("** class doesn't exist **")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
