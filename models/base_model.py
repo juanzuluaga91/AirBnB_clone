@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-""" defines all common atributes/methods"""
+"""
+defines all common atributes/methods
 
+"""
 from uuid import uuid4
 from datetime import datetime
 from models import storage
 
 
-class BaseModel():
-    """class that defines all common attributes/methods for other classes:"""
+class BaseModel:
+    """class that defines all common attributes/methods"""
 
     def __init__(self, *args, **kwargs):
         """Constructor"""

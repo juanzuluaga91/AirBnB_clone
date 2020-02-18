@@ -6,11 +6,8 @@ FileStorage Module
 import json
 
 
-class FileStorage():
-
-    """class that serializes instances to a
-    JSON file and deserializes JSON file to instances"""
-
+class FileStorage:
+    """class that serializes and deserializes"""
     __file_path = "file.json"
     __objects = {}
 
