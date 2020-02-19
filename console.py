@@ -140,6 +140,9 @@ class HBNBCommand(cmd.Cmd):
                 new_dict[tmp].save()
 
     def precmd(self, line):
+        """
+        Retrieve all instances of a class by using: <class name>.all().
+        """
         args = line.split(".")
         if len(args) == 2:
             cmd1 = args[1].split("(")
@@ -148,6 +151,19 @@ class HBNBCommand(cmd.Cmd):
             return stri
         else:
             return line
+
+    def do_count(self, args):
+        """
+        retrieve the number of instances of a class: <class name>.count().
+        """
+
+        count = 0
+        for key in models.storage.all().keys():
+            class_s = key.split(".")
+            if class_s[0] == args:
+                count = count + 1
+        print(count)
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
