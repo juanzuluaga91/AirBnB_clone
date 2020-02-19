@@ -132,7 +132,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 3:
             print("** value missing **")
         else:
-            new_dict = storage.all()
+            new_dict = models.storage.all()
             tmp = "{}.{}".format(args[0], args[1])
             if tmp in new_dict.keys():
                 attr = getattr(new_dict[tmp], args[2], "")
