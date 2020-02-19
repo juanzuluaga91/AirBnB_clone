@@ -31,7 +31,7 @@ class BaseModel:
     def __str__(self):
         """ Print Method """
         msg = "[{}] ({}) {}".format(
-            BaseModel.__name__, self.id, self.__dict__)
+            Self.__class__.__name__, self.id, str(self.__dict__))
         return msg
 
     def save(self):
