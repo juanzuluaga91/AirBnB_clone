@@ -9,7 +9,7 @@ import models
 from models.base_model import BaseModel
 from models import storage
 
-class_type = {"BaseModel": BaseModel}
+class_type = {"BaseModel": BaseModel, "User" : User}
 
 
 class HBNBCommand(cmd.Cmd):
