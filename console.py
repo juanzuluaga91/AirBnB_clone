@@ -139,5 +139,15 @@ class HBNBCommand(cmd.Cmd):
                 setattr(new_dict[tmp], args[2], type(attr)(args[3]))
                 new_dict[tmp].save()
 
+    def precmd(self, line):
+        args = line.split(".")
+        if len(args) == 2:
+            cmd1 = args[1].split("(")
+            cmd1 = cmd1[0]
+            stri = cmd1 + " " + args[0]
+            return stri
+        else:
+            return line
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
