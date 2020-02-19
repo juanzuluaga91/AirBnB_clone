@@ -7,9 +7,10 @@ import cmd
 import shlex
 import models
 from models.base_model import BaseModel
+from models.user import User
 from models import storage
 
-class_type = {"BaseModel": BaseModel, "User" : User}
+class_type = {"BaseModel": BaseModel, "User": User}
 
 
 class HBNBCommand(cmd.Cmd):
@@ -104,6 +105,28 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
 
+    def do_update(self, args):
+        """Update command load new info at the instances"""
+        args = shlex.split(args)
+        if len(args) == 0:
+            print("** class name missing **")
+        elif not args[0] in class_type:
+            print("** class doesn't exist **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        elif ("{}.{}".format(args[0], args[1]) not in storage.all().keys()):
+            print("** no instance found **")
+        elif len(args) == 2:
+            print("** attribute name missing **")
+        elif len(args) == 3:
+            print("** value missing **")
+        else:
+            new_dict = storage.all()
+            tmp = "{}.{}".format(args[0], args[1])
+            if tmp in new_dict.keys():
+                attr = getattr(new_dict[tmp], args[2], "")
+                setattr(new_dict[tmp], args[2], type(attr)(args[3]))
+                new_dict[tmp].save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
