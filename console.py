@@ -15,13 +15,13 @@ from models.review import Review
 from models.state import State
 from models import storage
 
-__classes_type = {'BaseModel': BaseModel,
-                  'User': User,
-                  'Place': Place,
-                  'State': State,
-                  'City': City,
-                  'Amenity': Amenity,
-                  'Review': Review}
+__class_type = {'BaseModel': BaseModel,
+                'User': User,
+                'Place': Place,
+                'State': State,
+                'City': City,
+                'Amenity': Amenity,
+                'Review': Review}
 
 
 class HBNBCommand(cmd.Cmd):
@@ -47,8 +47,8 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
             return False
-        if args[0] in class_type:
-            new_inst = class_type[args[0]]()
+        if args[0] in __class_type:
+            new_inst = __class_type[args[0]]()
         else:
             print("** class doesn't exist **")
             return False
@@ -64,7 +64,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
             return False
-        if args[0] in class_type:
+        if args[0] in __class_type:
             if len(args) > 1:
                 key = args[0] + "." + args[1]
                 if key in models.storage.all():
@@ -83,7 +83,7 @@ class HBNBCommand(cmd.Cmd):
         args = shlex.split(arg)
         if len(args) == 0:
             print("** class name missing **")
-        elif args[0] in class_type:
+        elif args[0] in __class_type:
             if len(args) > 1:
                 key = args[0] + "." + args[1]
                 if key in models.storage.all():
@@ -106,7 +106,7 @@ class HBNBCommand(cmd.Cmd):
             print("[", end="")
             print(", ".join(obj_all), end="")
             print("]")
-        elif args[0] in class_type:
+        elif args[0] in __class_type:
             for key in models.storage.all():
                 if args[0] in key:
                     obj_all.append(str(models.storage.all()[key]))
@@ -121,7 +121,7 @@ class HBNBCommand(cmd.Cmd):
         args = shlex.split(args)
         if len(args) == 0:
             print("** class name missing **")
-        elif not args[0] in class_type:
+        elif not args[0] in __class_type:
             print("** class doesn't exist **")
         elif len(args) == 1:
             print("** instance id missing **")
