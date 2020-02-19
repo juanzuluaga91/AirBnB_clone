@@ -147,8 +147,14 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 2:
             cmd1 = args[1].split("(")
             cmd1 = cmd1[0]
-            stri = cmd1 + " " + args[0]
-            return stri
+            if cmd1 == "show":
+                cmd2 = args[1].split("(")
+                id1 = cmd2[1].replace(")", "")
+                stri2 = cmd1 + " " + args[0] + " " + id1
+                return stri2
+            else:
+                stri = cmd1 + " " + args[0]
+                return stri
         else:
             return line
 
