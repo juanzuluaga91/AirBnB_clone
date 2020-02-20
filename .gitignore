@@ -19,3 +19,5 @@ tmp_console_main.py
 models/__pycache__/__init__.cpython-38.pyc
 models/__pycache__/review.cpython-37.pyc
 models/__pycache__/place.cpython-37.pyc
+models/__pycache__/city.cpython-37.pyc
+models/__pycache__/base_model.cpython-38.pyc
