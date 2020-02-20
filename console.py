@@ -150,8 +150,19 @@ class HBNBCommand(cmd.Cmd):
             if cmd1 == "show" or cmd1 == "destroy":
                 cmd2 = args[1].split("(")
                 id1 = cmd2[1].replace(")", "")
+                id1 = list(id1)
                 stri2 = cmd1 + " " + args[0] + " " + id1
                 return stri2
+            elif cmd1 == "update":
+                cmd2 = args[1].split("(")
+                id1 = cmd2[1].replace(")", "")
+                id1 = id1.replace(',', "")
+                id2 = shlex.split(id1)
+                print(id2[0])
+                str_u = (cmd1 + " " + args[0] + " " + str(id2[0]) + " "
+                         + str(id2[1]) + " " + '"' + str(id2[2]) + '"')
+                print(str_u)
+                return str_u
             else:
                 stri = cmd1 + " " + args[0]
                 return stri
