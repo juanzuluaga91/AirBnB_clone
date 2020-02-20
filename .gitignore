@@ -8,3 +8,10 @@ main
 __pycache__/console.cpython-37.pyc
 models/__pycache__/__init__.cpython-37.pyc
 file.json
+models/engine/__pycache__/file_storage.cpython-38.pyc
+models/engine/__pycache__/file_storage.cpython-37.pyc
+models/engine/__pycache__/__init__.cpython-38.pyc
+models/engine/__pycache__/__init__.cpython-37.pyc
+models/__pycache__/user.cpython-38.pyc
+models/__pycache__/user.cpython-37.pyc
+models/__pycache__/state.cpython-37.pyc
