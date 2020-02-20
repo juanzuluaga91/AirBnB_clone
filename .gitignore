@@ -7,3 +7,4 @@ main
 ~~~
 __pycache__/console.cpython-37.pyc
 models/__pycache__/__init__.cpython-37.pyc
+file.json
