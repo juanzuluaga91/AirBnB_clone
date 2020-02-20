@@ -21,3 +21,5 @@ models/__pycache__/review.cpython-37.pyc
 models/__pycache__/place.cpython-37.pyc
 models/__pycache__/city.cpython-37.pyc
 models/__pycache__/base_model.cpython-38.pyc
+models/__pycache__/amenity.cpython-37.pyc
+models/__pycache__/base_model.cpython-37.pyc
