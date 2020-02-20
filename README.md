@@ -42,7 +42,7 @@ List of commands this console current supports:
 
 * `def __init__(self, *args, **kwargs)` - Initialization of the base model
 * `def __str__(self)` - String representation of the BaseModel class
-* `def save(self)` - Updates the attribute `updated_at` with the current datetime
+* `def save(self)` - Updates the attribute `updated_at` with the current datetime.
 * `def to_dict(self)` - returns a dictionary containing all keys/values of the instance
 
 ### `Classes inherited from Base Model:`
