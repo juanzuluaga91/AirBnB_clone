@@ -158,10 +158,9 @@ class HBNBCommand(cmd.Cmd):
                 id1 = cmd2[1].replace(")", "")
                 id1 = id1.replace(',', "")
                 id2 = shlex.split(id1)
-                print(id2[0])
-                str_u = (cmd1 + " " + args[0] + " " + str(id2[0]) + " "
-                         + str(id2[1]) + " " + '"' + str(id2[2]) + '"')
-                print(str_u)
+                str_u = (cmd1 + " " +
+                         args[0] + " " + str(id2[0]) + " " +
+                         str(id2[1]) + " " + '"' + str(id2[2]) + '"')
                 return str_u
             else:
                 stri = cmd1 + " " + args[0]
