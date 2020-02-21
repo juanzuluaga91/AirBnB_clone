@@ -18,6 +18,7 @@ from io import StringIO
 import os
 import pep8
 
+
 class TestHBNBCommand(unittest.TestCase):
     """Tests HBNBCommand Console"""
 
@@ -30,7 +31,7 @@ class TestHBNBCommand(unittest.TestCase):
         style = pep8.StyleGuide(quiet=True)
         result = style.check_files(['models/amenity.py'])
         self.assertEqual(result.total_errors, 0, "Fix pep8")
-    
+
     def test_HBNBCommand_help(self):
         """Tests the help command"""
         with patch('sys.stdout', new=StringIO()) as f:
